@@ -3,7 +3,7 @@ from rag import get_llm, retrieval, create_system_prompt
 import re
 
 # ── Hàm chuyển link ảnh thành thẻ <img> HTML với kích thước cố định ─────────
-IMG_WIDTH = 300   # ← thay đổi giá trị này để điều chỉnh kích thước ảnh (px)
+IMG_WIDTH = 400   # ← thay đổi giá trị này để điều chỉnh kích thước ảnh (px)
 
 def render_with_images(text: str) -> str:
     return re.sub(
@@ -22,7 +22,7 @@ with st.sidebar:
 
     llm_name = st.selectbox(
         "Mô hình LLM",
-        ["deepseek", "gemini", "ollama_host", "unsloth_host"],
+        ["deepseek", "gemini", "ollama_host"],
     )
     temperature = st.slider("Temperature", 0.0, 2.0, 0.7, 0.05)
     top_p       = st.slider("Top-p",        0.0, 1.0, 0.9, 0.05)
