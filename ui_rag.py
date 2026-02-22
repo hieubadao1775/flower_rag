@@ -7,7 +7,7 @@ IMG_WIDTH = 400   # ← thay đổi giá trị này để điều chỉnh kích 
 
 def render_with_images(text: str) -> str:
     return re.sub(
-        r'(https\S+\.jpg)',
+        r'(https\S+\.(jpg|jpeg))',
         rf'<br><img src="\1" width="{IMG_WIDTH}" style="border-radius:8px; margin:4px 0;"><br>',
         text,
     )
