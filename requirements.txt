@@ -1,0 +1,17 @@
+--extra-index-url https://download.pytorch.org/whl/cu130
+torch
+
+transformers
+sentence-transformers
+unsloth[cu130-torch2100] @ git+https://github.com/unslothai/unsloth.git
+google-generativeai
+openai
+ollama
+
+dotenv
+google-genai
+modelscope
+pymongo
+scrapy
+bs4
+streamlit
