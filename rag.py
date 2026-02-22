@@ -31,12 +31,6 @@ def retrieval(query: str, db_type: str, top_k: int) -> list:
     elif db_type == "qdrant":
         ...
 
-def extract_img(llm_answer: str) -> str:
-    pattern = r"https\S+\.(jpg|jpeg|png|gif|webp|bmp|svg)"
-    match = re.search(pattern, llm_answer, re.IGNORECASE)
-    
-    return match.group(0) if match else ""
-
 def create_system_prompt(docs: list) -> str:
     context = []
     for doc in docs:
