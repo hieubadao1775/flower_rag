@@ -1,1 +1,1 @@
-from embeddings.embedding_models import SentenceTransformerEmbedding, GeminiEmbedding
+from embeddings.embedding_models import GeminiEmbedding
