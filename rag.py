@@ -32,7 +32,9 @@ def retrieval(query: str, db_type: str, top_k: int) -> list:
         ...
 
 def extract_img(llm_answer: str) -> str:
-    match = re.search(r'https\S+\.(jpg|jpeg)', llm_answer)
+    pattern = r"https\S+\.(jpg|jpeg|png|gif|webp|bmp|svg)"
+    match = re.search(pattern, llm_answer, re.IGNORECASE)
+    
     return match.group(0) if match else ""
 
 def create_system_prompt(docs: list) -> str:
